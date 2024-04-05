@@ -8,6 +8,7 @@ const initialState = {
 }
 
 const addUser = async (prevState, formData) => {
+    "use server"
     const title = formData.get('username')
     const password = formData.get('password')
     if (!title) return { response: { success: false, message: "specify a title" } }
